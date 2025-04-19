@@ -1,0 +1,9 @@
+{{#if (and name email)}}
+[user]
+	name = {{name}}
+	email = {{email}}
+{{/if}}
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main

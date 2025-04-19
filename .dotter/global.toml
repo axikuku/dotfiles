@@ -5,3 +5,6 @@ default_target_type = "automatic"
 
 [cargo.files]
 "cargo/config.toml" = "~/.cargo/config.toml"
+
+[git.files]
+"git/gitconfig" = "~/.gitconfig"
