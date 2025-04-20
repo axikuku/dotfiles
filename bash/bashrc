@@ -1,0 +1,15 @@
+shopt -s completion_strip_exe
+
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+alias df="df -Th"
+alias du="du -sh"
+alias less="less -r"
+alias grep="grep --color=auto"
+alias ls="eza -h"
+alias la="ls -a"
+alias ll="ls -l --git"
+alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+eval "$(fzf --bash)"
