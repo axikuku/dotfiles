@@ -1,5 +1,18 @@
+# Bash history
+export HISTFILESIZE=9000
+export HISTSIZE=500
+export PROMPT_COMMAND='history -a'
+export HISTCONTROL=ignoredups:ignorespace
+export HISTIGNORE="ls:cd:pwd:exit:clear:history:df:du:git status:git diff:git log"
+export HISTTIMEFORMAT="%F %T "
+# export HISTFILE="$HOME/.config/bash/bash_history"
+
+{{#if (eq dotter.os "windows")}}
+# Shopt
 shopt -s completion_strip_exe
 
+{{/if}}
+# Alias
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
@@ -11,5 +24,9 @@ alias ls="eza -h"
 alias la="ls -a"
 alias ll="ls -l --git"
 alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+{{#if (eq dotter.os "unix")}}
+alias hx="helix"
+{{/if}}
 
+# Fuzzy Finder
 eval "$(fzf --bash)"
