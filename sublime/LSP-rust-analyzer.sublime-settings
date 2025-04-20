@@ -1,0 +1,5 @@
+{
+	"command": [
+		"~/.cargo/bin/rust-analyzer.exe"
+	]
+}
