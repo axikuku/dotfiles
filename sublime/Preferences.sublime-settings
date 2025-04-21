@@ -3,7 +3,7 @@
 		"Vintage"
 	],
 	"index_files": true,
-	"font_face": "CaskaydiaCove NF",
+	"font_face": "Cascadia Code",
 	"font_size": 10,
 	"theme": "Adaptive.sublime-theme",
 	"color_scheme": "Mariana.sublime-color-scheme",
