@@ -1,5 +1,3 @@
-# This is the PowerShell profile script that runs at startup.
-# It sets up the environment variables and aliases for the PowerShell session.
 $env:DOTFILES = "C:\dotfiles"
 
 # Rust
@@ -16,9 +14,11 @@ $env:VK_ADD_LAYER_PATH = "$env:VCPKG_ROOT\installed\x64-mingw-dynamic\bin"
 
 # Android SDK and NDK
 $env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
-$LatestNDKVersion = Get-ChildItem -Path "$env:LOCALAPPDATA\Android\Sdk\ndk" | Sort-Object Name -Descending | Select-Object -First 1
-if ($LatestNDKVersion -ne $null) {
-    $env:NDK_HOME = $LatestNDKVersion.FullName
+if (Test-Path $env:ANDROID_HOME) {
+    $LatestNDKVersion = Get-ChildItem -Path "$env:ANDROID_HOME\ndk" -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1
+    if ($LatestNDKVersion -ne $null) {
+        $env:NDK_HOME = $LatestNDKVersion.FullName
+    }
 }
 
 # PATH modifications
