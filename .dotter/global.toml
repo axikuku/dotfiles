@@ -5,6 +5,8 @@ default_target_type = "automatic"
 
 [bash.files]
 "bash/bashrc" = "~/.bashrc"
+"bash/liquidprompt/liquidprompt" = "~/.config/liquidprompt/liquidprompt.sh"
+"bash/liquidprompt/themes" = "~/.config/liquidprompt/themes"
 
 [cargo.files]
 "cargo/config.toml" = "~/.cargo/config.toml"

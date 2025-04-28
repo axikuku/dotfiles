@@ -30,3 +30,6 @@ alias hx="helix"
 
 # Fuzzy Finder
 eval "$(fzf --bash)"
+source ~/.config/liquidprompt/liquidprompt.sh
+source ~/.config/liquidprompt/themes/unfold/unfold.theme
+lp_theme unfold
