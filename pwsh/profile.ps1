@@ -5,12 +5,13 @@ $env:RUSTUP_DIST_SERVER = "https://rsproxy.cn"
 $env:RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
 
 # Vcpkg and CMake
-$env:VCPKG_TARGET_TRIPLET = "x64-mingw-dynamic"
-$env:VCPKG_DEFAULT_TRIPLET = "x64-mingw-dynamic"
-$env:VCPKG_DEFAULT_HOST_TRIPLET = "x64-mingw-dynamic"
+# x64-windows \ x64-mingw-dynamic \ x64-mingw-static
+$env:VCPKG_TARGET_TRIPLET = {{vcpkg_target}}
+$env:VCPKG_DEFAULT_TRIPLET = {{vcpkg_target}}
+$env:VCPKG_DEFAULT_HOST_TRIPLET = {{vcpkg_target}}
 $env:VCPKG_ROOT = "C:\vcpkg"
 $env:CMAKE_TOOLCHAIN_FILE = "$env:VCPKG_ROOT\scripts\buildsystems\vcpkg.cmake"
-$env:VK_ADD_LAYER_PATH = "$env:VCPKG_ROOT\installed\x64-mingw-dynamic\bin"
+$env:VK_ADD_LAYER_PATH = "$env:VCPKG_ROOT\installed\$env:VCPKG_TARGET_TRIPLET\bin"
 
 # Android SDK and NDK
 $env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
