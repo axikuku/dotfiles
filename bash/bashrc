@@ -7,6 +7,10 @@ export HISTIGNORE="ls:cd:pwd:exit:clear:history:df:du:git status:git diff:git lo
 export HISTTIMEFORMAT="%F %T "
 # export HISTFILE="$HOME/.config/bash/bash_history"
 
+# Go Proxy
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
 {{#if (eq dotter.os "windows")}}
 # Shopt
 shopt -s completion_strip_exe

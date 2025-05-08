@@ -1,5 +1,9 @@
 $env:DOTFILES = "C:\dotfiles"
 
+# Go
+$env:GO111MODULE = "on"
+$env:GOPROXY = "https://goproxy.cn"
+
 # Rust
 $env:RUSTUP_DIST_SERVER = "https://rsproxy.cn"
 $env:RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup"
