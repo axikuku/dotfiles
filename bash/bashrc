@@ -14,8 +14,8 @@ export GOPROXY=https://goproxy.cn
 {{#if (eq dotter.os "windows")}}
 # Shopt
 shopt -s completion_strip_exe
-
 {{/if}}
+
 # Alias
 alias cp="cp -i"
 alias mv="mv -i"
@@ -32,8 +32,10 @@ alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias hx="helix"
 {{/if}}
 
+{{#if (is_executable "starship")}}
+# Prompt with starship
+eval "$(starship init bash)"
+{{/if}}
+
 # Fuzzy Finder
 eval "$(fzf --bash)"
-source ~/.config/liquidprompt/liquidprompt.sh
-source ~/.config/liquidprompt/themes/unfold/unfold.theme
-lp_theme unfold
