@@ -24,9 +24,16 @@ alias df="df -Th"
 alias du="du -sh"
 alias less="less -r"
 alias grep="grep --color=auto"
-alias ls="eza -h"
+{{#if (is_executable "eza")}}
+alias ls="eza --color=auto"
+alias l="ls -F"
+alias ll="l -ahl --time-style long-iso"
+{{else}}
+alias ls="ls --color=auto"
+alias l="ls -F"
+alias ll="l -Ahl"
+{{/if}}
 alias la="ls -a"
-alias ll="ls -l --git"
 alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 {{#if (eq dotter.os "unix")}}
 alias hx="helix"
