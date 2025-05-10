@@ -1,5 +1,11 @@
 $env:DOTFILES = "C:\dotfiles"
 
+{{#if (and OPENAI_BASE_URL OPENAI_API_KEY)}}
+# OpenAi environment for git-commit-helper
+$env:OPENAI_BASE_URL = {{OPENAI_BASE_URL}}
+$env:OPENAI_API_KEY = {{OPENAI_API_KEY}}
+{{/if}}
+
 # Go
 $env:GO111MODULE = "on"
 $env:GOPROXY = "https://goproxy.cn"
