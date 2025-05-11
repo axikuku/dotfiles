@@ -35,6 +35,7 @@ if (Test-Path $env:ANDROID_HOME) {
 # PATH modifications
 $env:PATH += ";C:\run\zed"
 $env:PATH += ";$env:ProgramFiles\Sublime Text"
+$env:PATH += ";$env:ProgramFiles\Sublime Merge"
 $env:PATH += ";$env:VCPKG_ROOT"
 
 # Aliases
