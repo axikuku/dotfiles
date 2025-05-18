@@ -5,7 +5,9 @@
 {{/if}}
 [core]
 	autocrlf = input
+{{#if (is_executable "helix")}}
 	editor = helix
+{{/if}}
 [init]
 	defaultBranch = main
 [pull]
