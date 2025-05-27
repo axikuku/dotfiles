@@ -7,8 +7,8 @@
 	ui = auto
 [core]
 	autocrlf = input
-{{#if (is_executable "helix")}}
-	editor = helix
+{{#if (is_executable "hx")}}
+	editor = hx
 {{/if}}
 [init]
 	defaultBranch = main
