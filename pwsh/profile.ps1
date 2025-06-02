@@ -68,7 +68,8 @@ function Invoke-Eza {
       [Parameter(ValueFromRemainingArguments = $true)]
       [string[]]$Args
   )
-  eza --icons=always @Args
+  eza @Args
+  # eza --icons=always @Args
 }
 Set-Alias ls Invoke-Eza
 
@@ -77,7 +78,8 @@ function Invoke-Eza_All {
       [Parameter(ValueFromRemainingArguments = $true)]
       [string[]]$Args
   )
-  eza -a --icons=always @Args
+  eza -a @Args
+  # eza -a --icons=always @Args
 }
 Set-Alias la Invoke-Eza_All
 
@@ -96,16 +98,3 @@ Set-PSReadlineKeyHandler -Key ctrl+d -Function ViExit
 
 # PsFzf
 Set-PsFzfOption -PSReadlineChordProvider ctrl+t -PSReadlineChordReverseHistory ctrl+r
-
-# PSCompletions
-Import-Module PSCompletions
-
-# argc-completions
-# Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-$env:ARGC_COMPLETIONS_ROOT = "$env:USERPROFILEC\Documents\PowerShell\argc-completions"
-$env:ARGC_COMPLETIONS_PATH = ($env:ARGC_COMPLETIONS_ROOT + '\completions\windows;' + $env:ARGC_COMPLETIONS_ROOT + '\completions')
-$env:PATH = $env:ARGC_COMPLETIONS_ROOT + '\bin' + [IO.Path]::PathSeparator + $env:PATH
-# To add completions for only the specified command, modify next line e.g. $argc_scripts = @("cargo", "git")
-$argc_scripts = ((Get-ChildItem -File -Path ($env:ARGC_COMPLETIONS_ROOT + '\completions\windows'),($env:ARGC_COMPLETIONS_ROOT + '\completions')) | ForEach-Object { $_.BaseName })
-# argc --argc-completions powershell $argc_scripts | Out-String | Invoke-Expression
-$PSCompletions.argc_completions($argc_scripts)
