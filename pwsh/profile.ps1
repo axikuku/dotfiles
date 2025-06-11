@@ -37,6 +37,7 @@ $env:PATH += ";C:\run\zed"
 $env:PATH += ";$env:ProgramFiles\Sublime Text"
 $env:PATH += ";$env:ProgramFiles\Sublime Merge"
 $env:PATH += ";$env:VCPKG_ROOT"
+$env:PATH += ";$env:GOPATH\bin"
 
 function gitlg {
     param (
