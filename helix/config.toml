@@ -19,10 +19,7 @@ select = "underline"
 g = { a = "code_action" }
 C-s = ":write"
 "C-/" = "toggle_comments"
+";" = "command_mode"
 
 [keys.select]
 "C-/" = "toggle_comments"
-
-[keys.normal.";"]
-q = ":quit"
-w = ":write"
